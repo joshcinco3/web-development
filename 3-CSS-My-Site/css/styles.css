@@ -25,6 +25,10 @@ h3 {
   font-family: "Montserrat", sans-serif;
 }
 
+p {
+  line-height: 2;
+}
+
 a {
   color: #11999e;
   font-family: "Montserrat", sans-serif;
@@ -34,10 +38,6 @@ a {
 
 a:hover {
   color: #eaf6f6;
-}
-
-p {
-  line-height: 2;
 }
 
 hr {
@@ -54,6 +54,22 @@ hr {
   padding-top: 100px;
 }
 
+.top-cloud {
+  position: absolute;
+  right: 300px;
+  top: 40px;
+}
+
+.pro {
+  text-decoration: underline;
+}
+
+.bottom-cloud {
+  position: absolute;
+  left: 250px;
+  bottom: 300px;
+}
+
 .middle-container {
   margin: 100px 0;
 }
@@ -61,38 +77,6 @@ hr {
 .intro {
   margin: auto;
   width: 30%;
-}
-
-.bottom-container {
-  background-color: #66bfbf;
-  padding: 50px 0 20px;
-}
-
-.contact-message {
-  margin: 40px auto 60px;
-  width: 40%;
-}
-
-.copyright {
-  color: #eaf6f6;
-  font-size: 0.75 rem;
-  padding: 20px 0;
-}
-
-.pro {
-  text-decoration: underline;
-}
-
-.top-cloud {
-  position: absolute;
-  right: 300px;
-  top: 40px;
-}
-
-.bottom-cloud {
-  position: absolute;
-  left: 250px;
-  bottom: 300px;
 }
 
 .skill-row {
@@ -111,6 +95,22 @@ hr {
   float: right;
   margin-left: 30px;
   width: 25%;
+}
+
+.bottom-container {
+  background-color: #66bfbf;
+  padding: 50px 0 20px;
+}
+
+.contact-message {
+  margin: 40px auto 60px;
+  width: 40%;
+}
+
+.copyright {
+  color: #eaf6f6;
+  font-size: 0.75 rem;
+  padding: 20px 0;
 }
 
 .btn {

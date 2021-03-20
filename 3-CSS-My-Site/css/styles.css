@@ -16,7 +16,6 @@ h2 {
   font-family: "Montserrat", sans-serif;
   font-size: 2.5rem;
   font-weight: normal;
-  line-height: 2;
 }
 
 h3 {
@@ -54,4 +53,23 @@ a {
   position: absolute;
   left: 300px;
   bottom: 300px;
+}
+
+.skill-row {
+  line-height: 2;
+  margin: 100px auto 100px;
+  text-align: left;
+  width: 50%;
+}
+
+.computer-img {
+  float: left;
+  margin-right: 30px;
+  width: 25%;
+}
+
+.cooking-img {
+  float: right;
+  margin-left: 30px;
+  width: 25%;
 }

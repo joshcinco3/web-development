@@ -44,10 +44,9 @@ p {
 
 .white {
   background-color: #fff;
-  color: #000;
 }
 
-/* Nav Bar */
+/* Navigation Bar */
 
 .navbar {
   padding: 0 0 4.5rem;
@@ -82,10 +81,10 @@ p {
 }
 
 .title-image {
+  width: 50%;
+  transform: rotate(25deg);
   position: absolute;
   right: 30%;
-  transform: rotate(25deg);
-  width: 50%;
 }
 
 /* Features section */
@@ -95,7 +94,7 @@ p {
 }
 
 .feature-box {
-  padding: 5%;
+  padding: 4.5%;
 }
 
 .feature-icon {
@@ -111,7 +110,7 @@ p {
   font-size: 1.5rem;
 }
 
-/* Testimonials Section */
+/* Testimonial Section */
 
 #testimonials {
   background-color: #ef8172;
@@ -157,18 +156,15 @@ p {
 
 /* Footer Section */
 
-#footer {
-  background-color: #fff;
-}
-
 .social-icon {
   margin: 20px 10px;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1028px) {
   #title {
     text-align: center;
   }
+
   .title-image {
     position: static;
     transform: rotate(0);

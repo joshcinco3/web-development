@@ -20,6 +20,7 @@ $(".btn").on("click", function() {
     userClickedPattern.push(userChosenColor);
 
     playSound(userChosenColor);
+    animatePress(userChosenColor);
     
     checkAnswer(userClickedPattern.length - 1);
 });

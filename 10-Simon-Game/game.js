@@ -30,3 +30,7 @@ function playSound(name) {
     var audio = new Audio("sounds/" + name + ".mp3");
     audio.play();
 }
+
+function animatePress(currentColor) {
+    $("#" + currentColor).addClass(".pressed").delay(100).removeClass(".pressed");
+}

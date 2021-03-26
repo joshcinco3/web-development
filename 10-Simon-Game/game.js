@@ -9,9 +9,8 @@ $(".btn").on("click", function() {
 
     userClickedPattern.push(userChosenColor);
 
-    var userSound = playSound(userChosenColor);
-    userSound.play();
-
+    playSound(userChosenColor);
+    
     console.log(userClickedPattern);
 });
 
@@ -24,12 +23,10 @@ function nextSequence() {
 
     $("#" + randomChosenColor).fadeIn(100).fadeOut(100).fadeIn(100);
 
-    var sound = playSound(randomChosenColor);
-    sound.play();
+    playSound(randomChosenColor);
 }
 
 function playSound(name) {
     var audio = new Audio("sounds/" + name + ".mp3");
-    
-    return audio;
+    audio.play();
 }

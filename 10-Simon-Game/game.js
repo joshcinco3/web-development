@@ -25,6 +25,8 @@ $(".btn").on("click", function() {
 });
 
 function nextSequence() {
+    userClickedPattern = [];
+
     level++;
     $("#level-title").text("Level " + level)
 
@@ -45,12 +47,20 @@ function playSound(name) {
 }
 
 function animatePress(currentColor) {
-    $("#" + currentColor).addClass(".pressed").delay(100).removeClass(".pressed");
+    $("#" + currentColor).addClass("pressed");
+    setTimeout(function() {
+        $("#" + currentColor).removeClass("pressed");
+    }, 100);
 }
 
 function checkAnswer(currentLevel) {
     if (userClickedPattern[currentLevel] === gamePattern[currentLevel]) {
         console.log("success")
+        if (userClickedPattern.length === gamePattern.length) {
+            setTimeout(function() {
+                nextSequence();
+            }, 1000);
+        }
     } else {
         console.log("wrong")
     }

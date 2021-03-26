@@ -1,10 +1,18 @@
 var buttonColors = ["red", "blue", "green", "yellow"];
 
 var gamePattern = [];
-
 var userClickedPattern = [];
 
+var started = false;
 var level = 0;
+
+$(document).on("keydown", function() {
+    if (!started) {
+        $("#level-title").text("Level " + level);
+        nextSequence();
+        started = true;
+    }
+})
 
 $(".btn").on("click", function() {
     var userChosenColor = $(this).attr("id");
@@ -17,10 +25,6 @@ $(".btn").on("click", function() {
 });
 
 function nextSequence() {
-    if (level === 0) {
-        $("#level-title").text("Level 0");
-    }
-    
     level++;
     $("#level-title").text("Level " + level)
 
@@ -44,6 +48,3 @@ function animatePress(currentColor) {
     $("#" + currentColor).addClass(".pressed").delay(100).removeClass(".pressed");
 }
 
-$(document).on("keydown", function(e) {
-    nextSequence();
-})

@@ -4,6 +4,14 @@ var gamePattern = [];
 
 var userClickedPattern = [];
 
+$("btn").on("click", function() {
+    var userChosenColor = $(this).attr("id");
+
+    userClickedPattern.push(userChosenColor);
+
+    console.log(userClickedPattern);
+});
+
 function nextSequence() {
     var randomNumber = Math.floor(Math.random() * 4);
 
@@ -15,13 +23,9 @@ function nextSequence() {
 
     var audio = new Audio("sounds/" + randomChosenColor + ".mp3");
     audio.play()
-
-    $("btn").on("click", function(e) {
-        var userChosenColor = e.id;
-
-        userClickedPattern.push(userChosenColor);
-    });
 }
+
+nextSequence();
 
 
 

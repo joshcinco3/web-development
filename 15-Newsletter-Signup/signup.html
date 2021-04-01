@@ -73,48 +73,46 @@
     </style>
 
     <!-- Custom styles for this template -->
-    <link href="styles.css" rel="stylesheet" />
+    <link href="css/styles.css" rel="stylesheet" />
   </head>
   <body class="text-center">
     <main class="form-signin">
-      <form>
-        <img
-          class="mb-4"
-          src="/docs/5.0/assets/brand/bootstrap-logo.svg"
-          alt=""
-          width="72"
-          height="57"
-        />
-        <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+      <form action="/" method="POST">
+        <img class="mb-4" src="images/logo.png" alt="" width="72" height="72" />
+        <h1 class="h3 mb-3 fw-normal">Signup for my Newsletter!</h1>
 
+        <div class="form-floating">
+          <input
+            type="text"
+            name="fName"
+            class="form-control top"
+            placeholder="First Name"
+          />
+          <label for="floatingInput">First Name</label>
+        </div>
+        <div class="form-floating">
+          <input
+            type="text"
+            name="lName"
+            class="form-control middle"
+            placeholder="Last Name"
+          />
+          <label for="floatingPassword">Last Name</label>
+        </div>
         <div class="form-floating">
           <input
             type="email"
-            class="form-control"
-            id="floatingInput"
-            placeholder="name@example.com"
+            name="email"
+            class="form-control bottom"
+            placeholder="Email"
           />
-          <label for="floatingInput">Email address</label>
-        </div>
-        <div class="form-floating">
-          <input
-            type="password"
-            class="form-control"
-            id="floatingPassword"
-            placeholder="Password"
-          />
-          <label for="floatingPassword">Password</label>
+          <label for="floatingPassword">Email</label>
         </div>
 
-        <div class="checkbox mb-3">
-          <label>
-            <input type="checkbox" value="remember-me" /> Remember me
-          </label>
-        </div>
         <button class="w-100 btn btn-lg btn-primary" type="submit">
-          Sign in
+          Sign Me Up!
         </button>
-        <p class="mt-5 mb-3 text-muted">&copy; 2017–2021</p>
+        <p class="mt-5 mb-3 text-muted">&copy; Josh Cinco</p>
       </form>
     </main>
   </body>

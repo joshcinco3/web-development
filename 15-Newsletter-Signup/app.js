@@ -7,6 +7,9 @@ const app= express();
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({extended: true}));
 
+const mykey = config.MY_KEY;
+const myuser = config.MY_USER;
+
 app.get("/", function(req, res){
     res.sendFile(__dirname + "/signup.html");
 });
@@ -35,10 +38,15 @@ app.post("/", function(req, res){
 
     const options = {
         method: "POST",
-        auth: "joshC:746bca0615b9771e9f11294099b5b0d1-us1"
+        auth: myuser + ":" + mykey
     }
 
     const request = https.request(url, options, function(response){
+        if (response.statusCode === 200) {
+            res.sendFile(__dirname + "/success.html");
+        } else {
+            res.sendFile(__dirname + "/failure.html");
+        }
         response.on("data", function(data){
             console.log(JSON.parse(data));
         });
@@ -48,12 +56,10 @@ app.post("/", function(req, res){
     request.end();
 });
 
-app.listen(3000, function() {
-    console.log("Server is running on port 3000.");
+app.post("/failure", function(req, res){
+    res.redirect("/");
 });
 
-// API Key
-// 746bca0615b9771e9f11294099b5b0d1-us1
-
-// List Id
-// 7214bdf945
+app.listen(process.env.PORT, function() {
+    console.log("Server is running on port 3000.");
+});

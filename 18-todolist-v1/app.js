@@ -3,15 +3,32 @@ const bodyParser = require("body-parser");
 
 const app = express();
 
+app.use(bodyParser.urlencoded({extended: true}));
+
+var items = ["Buy Food", "Cook Food", "Eat Food"];
+
+app.set("view engine", "ejs");
+
 app.get("/", function(req, res){
     var today = new Date();
-    var currentDay = today.getDay();
-    
-    if (currentDay === 6 || currentDay === 0) {
-        res.write("<h1>Yay it's the weekend!</h1>");
-    } else {
-        res.sendFile(__dirname + "/index.html");
-    }
+    var options = {
+        weekday: "long",
+        day: "numeric",
+        month: "long"
+    };
+    var day = today.toLocaleDateString("en-US", options);
+
+    res.render("list", {day: day, newListItems: items});
+});
+
+app.post("/", function(req, res){
+    var item = req.body.newItem;
+
+    items.push(item);
+
+    console.log(item);
+
+    res.redirect("/");
 });
 
 app.listen(3000, function(){

@@ -52,9 +52,10 @@ app.get("/posts/:postName", function(req, res){
   
   posts.forEach(function(post){
     if (_.kebabCase(post.title) === postName) {
-      console.log("Match Found");
-    } else {
-      console.log("Not a match");
+      res.render("post", {
+        title: post.title,
+        content: post.content
+      });
     }
   }); 
 });

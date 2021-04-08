@@ -1,5 +1,7 @@
 <%- include("partials/header") -%>
 <h1>Compose</h1>
-<input type="text" autocomplete="off" />
-<button type="submit">Publish</button>
+<form action="/compose" method="POST">
+  <input type="text" name="postTitle" autocomplete="off" />
+  <button type="submit" name="button">Publish</button>
+</form>
 <%- include("partials/footer") -%>
